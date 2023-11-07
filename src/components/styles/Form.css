@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', 'Roboto', 'Arial', sans-serif;
+  background: #4D6FE5;
+  height: 100vh;
+}
+
+#app {
+  background: #4D6FE5;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  color: #fff;
+  margin-top: 100px;
+}
+
+.container > header {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 auto 60px auto;
+  position: relative;
+  height: 35px;
+  width: 250px;
+  overflow: hidden;
+}
+
+.header-headings {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  transition: all .4s cubic-bezier(.785, .135, .15, .86);
+}
+
+.header-headings > span {
+  margin: 3px 0;
+}
+
+.header-headings.sign-in {
+  transform: translateY(0);
+}
+
+.header-headings.sign-up {
+  transform: translateY(-45px);
+}
+
+.header-headings.forgot {
+  transform: translateY(-80px);
+}
+
+.options {
+  padding:0 !important;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 380px) {
+  .options {
+    width: 100%;
+  }
+}
+
+.options > li {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all .2s ease;
+  list-style-type: none;
+}
+
+.options > li:hover {
+  opacity: 1;
+}
+
+.options > li.active {
+  opacity: 1;
+  background-color: transparent;
+}
+
+.options > li:nth-of-type(2) {
+  margin-left: 15px;
+}
+
+.options > li:last-of-type {
+  margin-left: auto;
+}
+
+.account-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.account-form-fields {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all .4s cubic-bezier(.785, .135, .15, .86);
+}
+
+.account-form-fields.sign-in {
+  max-height: 123px;
+}
+
+.account-form-fields.sign-up {
+  max-height: 250px;
+}
+
+.account-form-fields.forgot {
+  max-height: 61px;
+}
+
+.account-form-fields > input {
+  border: 0;
+  margin-bottom: 15px;
+  padding: 15px;
+  font-size: 1rem;
+  font-family: Nunito, sans-serif;
+  color: #000;
+  border-radius: 5px;
+}
+
+.account-form-fields > input::placeholder {
+  color: #aaa;
+}
+
+.account-form-fields > input::-webkit-input-placeholder {
+  color: #aaa;
+}
+
+.account-form-fields > input:-ms-input-placeholder {
+  color: #aaa;
+}
+
+.account-form-fields > input:focus {
+  outline: none;
+}
+
+.btn-submit-form {
+  border: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  padding: 15px 0;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  font-family: Nunito, sans-serif;
+  background: #6984F2; /* Replaced with a specific color as SASS functions aren't available in plain CSS */
+  box-shadow: 0px 1px 2px rgba(3, 3, 3, 0.13);
+  transition: all .2s ease;
+}
+
+.btn-submit-form:hover {
+  background: #3B4D9E; /* Replaced with a specific color as SASS functions aren't available in plain CSS */
+}
+
+.btn-submit-form:active,
+.btn-submit-form:focus {
+  outline: none;
+  background: #192B63; /* Replaced with a specific color as SASS functions aren't available in plain CSS */
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 30px 0;
+  text-align: center;
+}
+
+footer > a {
+  color: #fff;
+  font-weight: 700;
+}
+
+.login-with-google-btn {
+  margin-top: 15px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  padding: 12px 16px 12px 42px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
+  color: #757575;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/480px-Google_%22G%22_Logo.svg.png);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 50px 11px;
+  background-size: 20px 20px;
+}
+
+.login-with-google-btn:hover {
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.login-with-google-btn:active {
+  background-color: #eeeeee;
+}
+
+.login-with-google-btn:focus {
+  outline: none;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25), 0 0 0 3px #c8dafc;
+}
+
+.login-with-google-btn:disabled {
+  filter: grayscale(100%);
+  background-color: #ebebeb;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+}
+
+

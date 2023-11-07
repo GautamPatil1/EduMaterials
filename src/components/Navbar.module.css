@@ -1,0 +1,9 @@
+.navbar-{
+    background-color: red;
+}
+
+.navbar-item{
+    padding: 7rem;
+    display: inline;
+    list-style-type: none;
+}

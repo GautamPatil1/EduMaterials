@@ -1,0 +1,48 @@
+
+
+.copyright{
+    padding: .4rem;
+
+    display: inline;
+    float: left;
+    margin-top: .2rem;
+    margin-left: 1rem;
+}
+
+.socials{
+    display: flex;
+    margin-right: 3rem;
+    padding-left: 70%;
+    justify-content: space-around;
+    
+}
+
+.copyright a{
+    color: white;
+
+}
+
+.socials a{
+    
+    margin-top: .3rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .footer{
+        height: 100%;
+    }
+    .socials{
+
+        width: 10rem;
+        display: flex;
+        margin:0;
+        padding: 0;
+        padding-left: 3rem;
+    }
+    .copyright{
+        margin:.2rem;
+    }
+}

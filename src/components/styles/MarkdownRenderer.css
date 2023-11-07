@@ -1,0 +1,47 @@
+.content-container{
+    display:flex;
+}
+
+.navbar-container{
+    background-color: red;
+}
+.stackedit__html{
+    margin-left: 250px;
+    margin-top: 5rem;
+}
+
+.toc-container{
+    position: fixed;
+    top: 0; /* Adjust to position the div vertically */
+    left: 70rem; /* Adjust to position the div horizontally */
+    z-index: 100; /* You can adjust the z-index to control the stacking order */
+    /* Add other styling properties as needed */
+    margin-top: 5rem;
+    margin-right: 7rem;
+}
+.toc-scrollable {
+    max-height: 900px; /* Adjust the height as needed */
+    overflow-y: auto;
+    font-size: .8rem;
+    cursor: pointer;
+  }
+
+.footer{
+    height: 3rem;
+    background-color: teal;
+}
+
+@media screen and (max-width: 768px) {
+    /* Add your smartphone-specific styles here */
+    .content-container{
+        padding-top: 5rem;
+        display:block;
+    }
+    .toc-container{
+        display:none;
+    }
+    .stackedit__html{
+        margin-left: 0px;
+        margin-top: -3.59rem;
+    }
+  }

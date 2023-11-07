@@ -1,0 +1,159 @@
+#navbar-container{
+  background-color: teal ;
+  width: 100%;
+  margin-top: 0;
+  position: fixed;
+}
+.left , .right{
+  padding: 1rem;
+  display: inline;
+}
+
+.left{
+  padding-left: 10rem;
+  float:left;
+}
+.right{
+  padding-right: 10rem;
+  float: right;
+  color:white;
+}
+
+.btn-menu{
+  display: none;
+
+}
+
+.navbar-item{
+  padding: 10px;
+  display: inline;
+  list-style-type: none;
+}
+
+.navbar-item > a{
+  padding: .2rem;
+  color:white;
+  font-size: x-large;
+  text-decoration: none !important;
+}
+
+.navbar-item >a:hover{
+  background-color: rgb(3, 104, 104);
+  border-radius: 10px;
+}
+.offcanvas-container{
+  display: none;
+}
+
+#auth-btn{
+  background-color: rgb(12, 63, 63);
+  border-radius: 5rem;
+  padding:0.6rem 1rem;
+  border: 2px solid white;
+}
+
+#auth-btn > a{
+  margin-top: .2rem;
+}
+
+#auth-btn:hover{
+  background-color: rgb(31, 171, 171);
+  border: 2px solid rgb(12, 63, 63);
+}
+
+@media (max-width: 768px) {
+  #logo{
+    margin-right: 10px;
+  }
+  .left{
+    margin-top: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  .navbar-item{
+    padding: 0;
+  }
+  .right{
+    padding: 10px;
+  }
+  .right > li > a{
+    display: none;
+  }
+
+  #auth-btn{
+    padding: .3rem;
+    margin-right: 1rem;
+    display: inline;
+  }
+  .btn-menu{
+    display: inline-block;
+  }
+}
+
+
+
+/* Style the sidenav links and the dropdown button */
+.offcanvas-container a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.offcanvas-container a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: block;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 15px;
+} 
+
+.btn-menu{
+  background-color: transparent;
+  border: none;
+  color:white;
+}
+
+
+@media screen and (max-width: 768px) {
+  .offcanvas-container{
+    width: 0;
+  }
+
+  #auth-btn{
+    font-size: 15px;
+    padding-bottom: 5px;
+  }
+
+}
