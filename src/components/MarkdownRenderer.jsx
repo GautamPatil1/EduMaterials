@@ -14,8 +14,15 @@ function MarkdownViewer({ user }) {
   const [markdownText, setMarkdownText] = useState("");
 
   useEffect(() => {
-    const githubBaseURL = "https://raw.githubusercontent.com/MisalPaav/TYMaterials/master/docs";
-    const githubRawURL = subject && content ? `${githubBaseURL}/${subject}/${content}.md` : `${githubBaseURL}/${subject || "index"}.md`;
+    const githubBaseURL =
+      "https://raw.githubusercontent.com/MisalPaav/TYMaterials/master/docs";
+    if (subject && content) {
+      var githubRawURL = githubBaseURL + "/" + subject + "/" + content + ".md";
+    } else if (subject && !content) {
+      githubRawURL = githubBaseURL + "/" + subject + "/index.md";
+    } else {
+      githubRawURL = githubBaseURL + "/index.md";
+    }
 
     fetchMarkdownContent(githubRawURL);
   }, [subject, content]);
@@ -34,24 +41,27 @@ function MarkdownViewer({ user }) {
   };
 
   const renderMarkdown = () => {
-    const md = new MarkdownIt({ html: true }).use(MarkdownItAnchor).use(MarkdownItTOC, { includeLevel: [1, 2] });
+    const md = new MarkdownIt({ html: true })
+      .use(MarkdownItAnchor)
+      .use(MarkdownItTOC, { includeLevel: [1, 2] });
     return { __html: md.render(markdownText) };
   };
 
   return (
     <>
-
       <div id="navbar-container">
         <OffcanvasNavbar user={user} />
       </div>
-      
+
       <div className="MarkdownViewer">
-      
         <div className="sidebar-container">
           <Sidebar user={user} />
         </div>
         <div className="content-container">
-          <div className="stackedit__html" dangerouslySetInnerHTML={renderMarkdown()} />
+          <div
+            className="stackedit__html"
+            dangerouslySetInnerHTML={renderMarkdown()}
+          />
           <div className="toc-container">
             <TableOfContents markdownText={markdownText} />
           </div>

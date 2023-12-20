@@ -41,9 +41,7 @@
   background-color: rgb(3, 104, 104);
   border-radius: 10px;
 }
-.offcanvas-container{
-  display: none;
-}
+
 
 #auth-btn{
   background-color: rgb(12, 63, 63);
@@ -126,6 +124,8 @@
   color: white;
 }
 
+
+
 /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
 .dropdown-container {
   display: block;
@@ -155,5 +155,7 @@
     font-size: 15px;
     padding-bottom: 5px;
   }
+
+
 
 }

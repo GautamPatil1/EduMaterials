@@ -3,8 +3,7 @@ import "./styles/Sidebar.css"; // Import your CSS file
 import DropdownMenuItem from "./DropdownMenuItem";
 
 const Sidebar = ({ user }) => {
-
-  var simLinks = [
+  const simLinks = [
     "Unit1",
     "Unit2",
     "Unit3",
@@ -17,62 +16,24 @@ const Sidebar = ({ user }) => {
   ];
 
   if (!user) {
-    simLinks = simLinks.slice(0, 5);
+    simLinks.splice(5);
   }
 
   const subjects = [
-    {
-      title: "sepm",
-      links: simLinks.map((link) =>
-        link.startsWith("CAE-") || link.startsWith("ese-")
-          ? `SEPM-${link}`
-          : link
-      ),
-    },
-    {
-      title: "DM",
-      links: simLinks.map((link) =>
-        link.startsWith("CAE-") || link.startsWith("ese-") ? `DM-${link}` : link
-      ),
-    },
-    {
-      title: "BIA",
-      links: simLinks.map((link) =>
-        link.startsWith("CAE-") || link.startsWith("ese-")
-          ? `BIA-${link}`
-          : link
-      ),
-    },
-    {
-      title: "cd",
-      links: simLinks.map((link) =>
-        link.startsWith("CAE-") || link.startsWith("ese-") ? `CD-${link}` : link
-      ),
-    },
-    {
-      title: "WD",
-      links: simLinks.map((link) =>
-        link.startsWith("CAE-") || link.startsWith("ese-") ? `WD-${link}` : link
-      ),
-    },
-    {
-      title: "eeim",
-      links: simLinks.map((link) =>
-        link.startsWith("CAE-") || link.startsWith("ese-")
-          ? `EEIM-${link}`
-          : link
-      ),
-    },
-    {
-      title: "dbms",
-      links: simLinks.map((link) =>
-        link.startsWith("CAE-") || link.startsWith("ese-")
-          ? `DBMS-${link}`
-          : link
-      ),
-    },
+    { title: "sepm", prefix: "SEPM-" },
+    { title: "DM", prefix: "DM-" },
+    { title: "BIA", prefix: "BIA-" },
+    { title: "cd", prefix: "CD-" },
+    { title: "WD", prefix: "WD-" },
+    { title: "eeim", prefix: "EEIM-" },
+    { title: "dbms", prefix: "DBMS-" },
     // Add more subjects as needed
   ];
+
+  const generateLinks = (prefix) =>
+    simLinks.map((link) =>
+      link.startsWith("CAE-") || link.startsWith("ese-") ? `${prefix}${link}` : link
+    );
 
   return (
     <div className="sidenav">
@@ -80,7 +41,7 @@ const Sidebar = ({ user }) => {
         <DropdownMenuItem
           key={subject.title}
           title={subject.title}
-          links={subject.links}
+          links={generateLinks(subject.prefix)}
         />
       ))}
     </div>

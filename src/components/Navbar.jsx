@@ -1,5 +1,4 @@
-// src/components/OffcanvasNavbar.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./styles/NavBar.css";
@@ -7,85 +6,49 @@ import DropdownMenuItem from "./DropdownMenuItem";
 
 const OffcanvasNavbar = ({ user }) => {
   const [canvas, setCanvas] = useState(false);
+
   const showCanvas = () => {
+    setCanvas(!canvas);
+  };
+
+  const hideCanvas = () => {
+    console.log("Canvas = false");
+    setCanvas(false);
+  };
+
+  useEffect(() => {
     const offcanvasContainers = document.querySelectorAll(
       ".offcanvas-container"
     );
 
-    offcanvasContainers.forEach((offcanvasContainer) => {
-      if (canvas) {
-        offcanvasContainer.style.display = "none";
-      } else {
-        offcanvasContainer.style.display = "inline";
-      }
-    });
+    offcanvasContainers.forEach(
+      (offcanvasContainer) =>
+        (offcanvasContainer.style.display = canvas ? "inline" : "none")
+    );
+  }, [canvas]);
 
-    setCanvas(!canvas);
-  };
-
-  const simLinks = [
+  const initialSimLinks = [
     "Unit1",
     "Unit2",
     "Unit3",
     "Unit4",
     "Unit5",
-    "cae-1-Question-Bank",
-    "cae-2-Question-Bank",
-    "cae-3-Question-Bank",
-    "ese-Question-Bank",
+    "CAE-1-Question-Bank",
+    "CAE-2-Question-Bank",
+    "CAE-3-Question-Bank",
+    "CAE-Question-Bank",
   ];
 
+  const simLinks = user ? initialSimLinks : initialSimLinks.slice(0, 5);
+
   const subjects = [
-    {
-      title: "sepm",
-      links: simLinks.map((link) =>
-        link.startsWith("cae-") || link.startsWith("ese-")
-          ? `sepm-${link}`
-          : link
-      ),
-    },
-    {
-      title: "DM",
-      links: simLinks.map((link) =>
-        link.startsWith("cae-") || link.startsWith("ese-") ? `DM-${link}` : link
-      ),
-    },
-    {
-      title: "BIA",
-      links: simLinks.map((link) =>
-        link.startsWith("cae-") || link.startsWith("ese-")
-          ? `BIA-${link}`
-          : link
-      ),
-    },
-    {
-      title: "cd",
-      links: simLinks.map((link) =>
-        link.startsWith("cae-") || link.startsWith("ese-") ? `cd-${link}` : link
-      ),
-    },
-    {
-      title: "WD",
-      links: simLinks.map((link) =>
-        link.startsWith("cae-") || link.startsWith("ese-") ? `WD-${link}` : link
-      ),
-    },
-    {
-      title: "eeim",
-      links: simLinks.map((link) =>
-        link.startsWith("cae-") || link.startsWith("ese-")
-          ? `eeim-${link}`
-          : link
-      ),
-    },
-    {
-      title: "dbms",
-      links: simLinks.map((link) =>
-        link.startsWith("cae-") || link.startsWith("ese-")
-          ? `dbms-${link}`
-          : link
-      ),
-    },
+    "sepm",
+    "DM",
+    "BIA",
+    "cd",
+    "WD",
+    "eeim",
+    "dbms",
     // Add more subjects as needed
   ];
 
@@ -100,7 +63,7 @@ const OffcanvasNavbar = ({ user }) => {
         <div className="left">
           <li className="navbar-item">
             <Link to={"/"}>
-              <i id="logo" class="fa-solid fa-book"></i>
+              <i id="logo" className="fa-solid fa-book"></i>
             </Link>
           </li>
           <li className="navbar-item">
@@ -124,17 +87,22 @@ const OffcanvasNavbar = ({ user }) => {
 
           <li className="navbar-item">
             <Button className="btn-menu" onClick={showCanvas}>
-              <i class="fa-solid fa-bars fa-2x"></i>
+              <i className="fa-solid fa-bars fa-2x"></i>
             </Button>
           </li>
         </div>
       </div>
-      <div className="offcanvas-container">
+      <div className={`offcanvas-container ${canvas ? "open" : "close"}`}>
         {subjects.map((subject) => (
           <DropdownMenuItem
-            key={subject.title}
-            title={subject.title}
-            links={subject.links}
+            key={subject}
+            title={subject}
+            links={simLinks.map((link) =>
+              link.startsWith("CAE-") || link.startsWith("ese-")
+                ? `${subject.toUpperCase()}-${link}`
+                : link
+            )}
+            onClick={hideCanvas}
           />
         ))}
       </div>
