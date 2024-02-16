@@ -42,6 +42,11 @@ const OffcanvasNavbar = ({ user }) => {
   const simLinks = user ? initialSimLinks : initialSimLinks.slice(0, 5);
 
   const subjects = [
+    "ST",
+    "NLP",
+    "ML",
+    "UDBMS",
+    "UHV",
     "sepm",
     "DM",
     "BIA",
@@ -49,6 +54,7 @@ const OffcanvasNavbar = ({ user }) => {
     "WD",
     "eeim",
     "dbms",
+
     // Add more subjects as needed
   ];
 
@@ -72,12 +78,12 @@ const OffcanvasNavbar = ({ user }) => {
         </div>
 
         <div className="right">
-          <li className="navbar-item">
+          {/* <li className="navbar-item">
             <Link to={"/about"}>About Us</Link>
           </li>
           <li className="navbar-item">
             <Link to={"/contact"}>Contact us</Link>
-          </li>
+          </li> */}
           <li className="navbar-item">
             <Link to="/auth" id="auth-btn">
               {user ? user.displayName.split(" ")[0] : "Sign In"}{" "}

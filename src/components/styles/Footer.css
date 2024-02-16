@@ -1,5 +1,4 @@
 
-
 .copyright{
     padding: .4rem;
 
@@ -11,9 +10,8 @@
 
 .socials{
     display: flex;
-    margin-right: 3rem;
+    justify-content: space-between;
     padding-left: 70%;
-    justify-content: space-around;
     
 }
 

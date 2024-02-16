@@ -6,8 +6,10 @@
     background-color: red;
 }
 .stackedit__html{
+    width: auto;
     margin-left: 250px;
     margin-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 .toc-container{
@@ -26,9 +28,13 @@
     cursor: pointer;
   }
 
-.footer{
+.Footer{
+    position: fixed;
+    bottom: 0;
     height: 3rem;
     background-color: teal;
+    width: 100%;
+    padding-right: 1rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -44,4 +50,13 @@
         margin-left: 0px;
         margin-top: -3.59rem;
     }
+    .SignIn{
+        margin-top: 3rem;
+        margin-left: 1rem !important;
+    }
   }
+
+.SignIn{
+    margin-top: 7rem;
+    margin-left: 15rem;
+}

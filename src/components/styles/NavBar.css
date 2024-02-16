@@ -1,11 +1,13 @@
 #navbar-container{
   background-color: teal ;
   width: 100%;
+  height: 3.45rem;
   margin-top: 0;
   position: fixed;
+  z-index: 1000;
 }
 .left , .right{
-  padding: 1rem;
+  padding: .5rem;
   display: inline;
 }
 
@@ -14,7 +16,6 @@
   float:left;
 }
 .right{
-  padding-right: 10rem;
   float: right;
   color:white;
 }
@@ -31,6 +32,7 @@
 }
 
 .navbar-item > a{
+  vertical-align: center;
   padding: .2rem;
   color:white;
   font-size: x-large;
@@ -44,10 +46,12 @@
 
 
 #auth-btn{
+  margin: 0;
   background-color: rgb(12, 63, 63);
   border-radius: 5rem;
-  padding:0.6rem 1rem;
+  padding:0.2rem 1rem;
   border: 2px solid white;
+
 }
 
 #auth-btn > a{
@@ -73,12 +77,14 @@
     padding: 0;
   }
   .right{
-    padding: 10px;
+    padding: 0;
   }
   .right > li > a{
     display: none;
   }
-
+  .fa-bars{
+    margin-top: .3rem;
+  }
   #auth-btn{
     padding: .3rem;
     margin-right: 1rem;
@@ -87,9 +93,12 @@
   .btn-menu{
     display: inline-block;
   }
+  
+  .dropdown-btn{
+    background-color: teal !important;
+    border: 1px solid white;
+  }
 }
-
-
 
 /* Style the sidenav links and the dropdown button */
 .offcanvas-container a, .dropdown-btn {
@@ -140,9 +149,11 @@
 } 
 
 .btn-menu{
+  margin-top: 5px;
   background-color: transparent;
   border: none;
   color:white;
+
 }
 
 
@@ -155,7 +166,5 @@
     font-size: 15px;
     padding-bottom: 5px;
   }
-
-
 
 }

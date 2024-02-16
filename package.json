@@ -15,6 +15,7 @@
     "markdown-it-anchor": "^8.6.7",
     "markdown-it-table-of-contents": "^0.6.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.9.2",
     "react-dom": "^18.2.0",
     "react-markdown": "^9.0.0",
     "react-router-dom": "^6.17.0",
