@@ -47,6 +47,7 @@ const OffcanvasNavbar = ({ user }) => {
     "ML",
     "UDBMS",
     "UHV",
+    "BP",
     "sepm",
     "DM",
     "BIA",

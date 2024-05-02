@@ -25,6 +25,7 @@ const Sidebar = ({ user }) => {
     { title: "NLP", prefix: "NLP-" },
     { title: "UDBMS", prefix: "UDBMS-" },
     { title: "UHV", prefix: "UHV-" },
+    { title: "BP", prefix: "BP-" },
     { title: "sepm", prefix: "SEPM-" },
     { title: "DM", prefix: "DM-" },
     { title: "BIA", prefix: "BIA-" },
