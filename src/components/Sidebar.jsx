@@ -20,12 +20,6 @@ const Sidebar = ({ user }) => {
   }
 
   const subjects = [
-    { title: "ST", prefix: "ST-" },
-    { title: "ML", prefix: "ML-" },
-    { title: "NLP", prefix: "NLP-" },
-    { title: "UDBMS", prefix: "UDBMS-" },
-    { title: "UHV", prefix: "UHV-" },
-    { title: "BP", prefix: "BP-" },
     { title: "sepm", prefix: "SEPM-" },
     { title: "DM", prefix: "DM-" },
     { title: "BIA", prefix: "BIA-" },
@@ -33,6 +27,12 @@ const Sidebar = ({ user }) => {
     { title: "WD", prefix: "WD-" },
     { title: "eeim", prefix: "EEIM-" },
     { title: "dbms", prefix: "DBMS-" },
+    { title: "ST", prefix: "ST-" },
+    { title: "ML", prefix: "ML-" },
+    { title: "NLP", prefix: "NLP-" },
+    { title: "UDBMS", prefix: "UDBMS-" },
+    { title: "UHV", prefix: "UHV-" },
+    { title: "BP", prefix: "BP-" },
 
 
     // Add more subjects as needed

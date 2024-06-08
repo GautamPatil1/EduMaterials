@@ -42,12 +42,6 @@ const OffcanvasNavbar = ({ user }) => {
   const simLinks = user ? initialSimLinks : initialSimLinks.slice(0, 5);
 
   const subjects = [
-    "ST",
-    "NLP",
-    "ML",
-    "UDBMS",
-    "UHV",
-    "BP",
     "sepm",
     "DM",
     "BIA",
@@ -55,6 +49,12 @@ const OffcanvasNavbar = ({ user }) => {
     "WD",
     "eeim",
     "dbms",
+    "ST",
+    "NLP",
+    "ML",
+    "UDBMS",
+    "UHV",
+    "BP",
 
     // Add more subjects as needed
   ];
