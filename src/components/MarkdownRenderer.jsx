@@ -55,6 +55,9 @@ function MarkdownViewer({ user }) {
       <div id="navbar-container">
         <OffcanvasNavbar user={user} />
       </div>
+      <div class="merch">
+        gautam
+      </div>
 
       <div className="MarkdownViewer">
         <div className="sidebar-container">
